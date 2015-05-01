@@ -1,0 +1,7 @@
+<?php
+$servername = "localhost";
+$username = "postfix";
+$password = "matibdijCorvEwlAnvepUrigWeanApganMo";
+$dbname = "postfix";
+$alias_target = "nico";
+?>
