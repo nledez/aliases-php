@@ -1,7 +1,13 @@
 <?php
-$servername = "localhost";
-$username = "postfix";
-$password = "your-pass";
-$dbname = "postfix";
-$alias_target = "nico";
+
+$config = array(
+    "server" => "localhost",
+    "username" => "postfix",
+    "password" => "your-pass",
+    "username_rw" => "postfix",
+    "password_rw" => "your-pass",
+    "dbname" => "postfix",
+    "alias_target" => "nico"
+);
+
 ?>
