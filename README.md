@@ -4,12 +4,12 @@ Disclamer
 I use:
 bootstrap transition v2.3.2
 
-It's an old version of framework. An update may be a good idea. But I doesn't
-want take time to do it.
+It's an old version of the framework. An update may be a good idea. But I don't
+want take the time to do it.
 
 Security
 ========
-I kickly write this tool to be functionnal. It's protected with a http
+I quickly wrote this tool to be functionnal. It's protected with an http
 authentification. I'm the single user of this app.
 
 Do not use it in production :p
