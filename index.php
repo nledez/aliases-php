@@ -22,7 +22,7 @@ $newalias = $_POST["newalias"];
 require('config.inc.php');
 
 // Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($config["server"], $config["username"], $config["password"], $config["dbname"]);
 
 // Check connection
 if ($conn->connect_error) {
@@ -30,13 +30,11 @@ if ($conn->connect_error) {
 } 
 
 if ($newalias != '') {
-	$username_rw = "postfix_rw";
-	$password_rw = "tmYtp3GxXGGz8x64";
-	$conn_rw = new mysqli($servername, $username_rw, $password_rw, $dbname);
+	$conn_rw = new mysqli($config["server"], $config["username_rw"], $config["password_rw"], $config["dbname"]);
 	if ($conn_rw->connect_error) {
 		die("Connection failed: " . $conn_rw->connect_error);
 	} 
-	$sql = "INSERT INTO postfix_alias (alias, destination) VALUES ('$newalias', '$alias_target')";
+	$sql = sprintf( "INSERT INTO postfix_alias (alias, destination) VALUES ('%s', '%s')", $newalias, $config["alias_target"]);
 	if ($conn_rw->query($sql) === TRUE) {
 	    echo "New record created successfully";
 	} else {
