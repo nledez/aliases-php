@@ -26,13 +26,15 @@ Create user & db
 Open a mysql connexion as root and launch (replace 'your-pass' with right one):
 
 ```sql
-CREATE USER 'postfix'@'localhost' IDENTIFIED BY 'your-pass';
-GRANT USAGE ON *.* TO 'postfix'@'localhost' IDENTIFIED BY 'your-pass' WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;
+CREATE DATABASE IF NOT EXISTS postfix;
 
 CREATE USER 'postfix'@'localhost' IDENTIFIED BY 'your-pass';
 GRANT USAGE ON *.* TO 'postfix'@'localhost' IDENTIFIED BY 'your-pass' WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;
-CREATE DATABASE IF NOT EXISTS postfix;
-GRANT ALL PRIVILEGES ON postfix.* TO 'postfix'@'localhost';
+GRANT SELECT ON postfix.* TO 'postfix'@'localhost';
+
+CREATE USER 'postfix_rw'@'localhost' IDENTIFIED BY 'other_pass';
+GRANT USAGE ON *.* TO 'postfix_rw'@'localhost' IDENTIFIED BY 'other_pass' WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;
+GRANT INSERT ON postfix.* TO 'postfix_rw'@'localhost';
 
 FLUSH PRIVILEGES;
 ```

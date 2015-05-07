@@ -1,13 +1,13 @@
 <?php
 
 $config = array(
-    "server" => "localhost",
-    "username" => "postfix",
-    "password" => "your-pass",
-    "username_rw" => "postfix",
-    "password_rw" => "your-pass",
-    "dbname" => "postfix",
-    "alias_target" => "nico"
+	"server" => "localhost",
+	"username" => "postfix",
+	"password" => "your-pass",
+	"username_rw" => "postfix_rw",
+	"password_rw" => "other_pass",
+	"dbname" => "postfix",
+	"alias_target" => "nico"
 );
 
 ?>
