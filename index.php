@@ -60,11 +60,25 @@ if ($result->num_rows > 0) {
 	echo "0 results";
 }
 }
+?>
+
+<br/>
+<br/>
+<div>Total:
+<?
+
+$sql = "SELECT count(*) as total FROM postfix_alias where enable = 1 AND destination = '" . $config["alias_target"] . "'";
+$result = $conn->query($sql);
+
+$data = $result->fetch_array();
+
+echo $data['total'];
 
 $conn->close();
 
 ?>
-<div>
+</div>
+</div>
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
   </body>
