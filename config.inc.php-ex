@@ -7,7 +7,10 @@ $config = array(
 	"username_rw" => "postfix_rw",
 	"password_rw" => "other_pass",
 	"dbname" => "postfix",
-	"alias_target" => "nico"
+	"alias_target" => "nico",
+	"alias_domain" => "our.net",
+	"jquery_prefix" => "http://code.jquery.com/",
+	"icon_prefix" => "https://server.our.net/aliases/apple-touch-icon/"
 );
 
 ?>
